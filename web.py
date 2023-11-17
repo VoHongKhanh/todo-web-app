@@ -1,4 +1,5 @@
 # pip install streamlit
+# https://khanhvohong-todo-web-app.streamlit.app/
 import streamlit as st
 from modules.my_lib import *
 
@@ -34,9 +35,13 @@ def remove_complete(index):
 todos = read_data()
 mission_completed = read_data(missionCompletedFile)
 
+st.set_page_config(layout="wide")
+
 st.title("My Todo Web Application")
 st.subheader("This is my todo web application")
-st.markdown("<a href='mailto:khanhvh.fpt@gmail.com'>khanhvh.fpt@gmail.com</a> # <a href='tel:0976755191'>0976 755 191</a>", unsafe_allow_html=True)
+st.write("<a href='mailto:khanhvh.fpt@gmail.com'>khanhvh.fpt@gmail.com</a> # <a href='tel:0976755191'>0976 755 191</a>", unsafe_allow_html=True)
+
+st.text_input(label="", placeholder="Enter your todo here and then press Enter to add new todo", key="txt_todo", on_change=add_todo)
 
 if len(todos)==0:
     st.write("You don't have any to do.<br/>Please enter new todo into the textbox below and then press Enter to add new todo!")
@@ -59,5 +64,3 @@ if len(mission_completed)>0:
             remove_complete(index)
             del st.session_state[f"complete{index}"]
             st.experimental_rerun()
-
-st.text_input(label="", placeholder="Enter your todo here and then press Enter to add new todo", key="txt_todo", on_change=add_todo)
