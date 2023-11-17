@@ -1,0 +1,3 @@
+Learning ChatGPT
+Create console Python app
+Create GUI Python app
