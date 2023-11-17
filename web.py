@@ -1,5 +1,5 @@
 # pip install streamlit
-# https :  khanhvohong - todo - web - app . streamlit . app
+# https : // khanhvohong - to do - web - app . streamlit . app /
 import streamlit as st
 from modules.my_lib import *
 
